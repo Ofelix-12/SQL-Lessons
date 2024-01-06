@@ -1,0 +1,15 @@
+/*Union, Union All*/
+/*UNION will combine the data from the two tables removing the duplicates along with it*/
+select EmployeeID, FirstName, Age
+from EmployeeDemographics
+UNION 
+Select EmployeeID,JobTitle, Salary
+from EmployeeSalary
+
+/*UNION ALL combines both tables into one highligting everything including the duplicate values*/
+
+select EmployeeID, FirstName, Age
+from EmployeeDemographics
+UNION ALL
+Select EmployeeID,JobTitle, Salary
+from EmployeeSalary
