@@ -1,0 +1,25 @@
+SELECT FirstName, LastName, Age,
+CASE
+    WHEN Age > 30 THEN 'Old'
+	WHEN Age BETWEEN 27 AND 30 THEN 'Young'
+	ELSE 'Youth'
+	END
+FROM EmployeeDemographics
+
+SELECT *
+FROM EmployeeDemographics
+JOIN EmployeeSalary
+ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
+
+/*I want to focus much more on FirstName, LastName, JobTitle and Salary. We are calculating salaries after employees get their rates*/
+
+SELECT FirstName, LastName, JobTitle, Salary,
+CASE
+    WHEN JobTitle = 'Salesman' THEN Salary + (Salary*.10)
+	WHEN JobTitle = 'Accauntant' THEN Salary + (Salary*.05)
+	WHEN JobTitle = 'HR' THEN Salary + (Salary*.03)
+	ELSE Salary + (Salary*.01)
+	END AS SalaryAfterRaise
+FROM EmployeeDemographics
+JOIN EmployeeSalary
+ON EmployeeDemographics.EmployeeID = EmployeeSalary.EmployeeID
