@@ -1,0 +1,29 @@
+/*Inner joins, full/left/right outer Joins
+*/
+
+/*The inner join will return values that are common in both tables based on what the tables are joined on*/
+
+Select *
+from EmployeeDemographics
+Inner Join EmployeeSalary
+ON EmployeeDemographics.EmployeeID=EmployeeSalary.EmployeeID
+
+/*A full outer join will return all values on both tables regardless of whether they are a match or not*/
+Select *
+from EmployeeDemographics
+Full Outer Join EmployeeSalary
+ON EmployeeDemographics.EmployeeID=EmployeeSalary.EmployeeID
+
+/*The left outer join will return all the values on the left table and all the overlapping values that are similar in both tables. If its only on the Right table, we dont need it*/
+
+Select *
+from EmployeeDemographics
+Left Outer Join EmployeeSalary
+ON EmployeeDemographics.EmployeeID=EmployeeSalary.EmployeeID
+
+/*Right outer join is the exact opposite of Left outer Join*/
+
+Select *
+from EmployeeDemographics
+Right Outer Join EmployeeSalary
+ON EmployeeDemographics.EmployeeID=EmployeeSalary.EmployeeID
